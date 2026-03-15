@@ -23,12 +23,14 @@ https://[YOUR-USERNAME].github.io/learn-japanese/
 ### 로컬에서 실행하기
 
 1. 저장소를 클론합니다:
+
 ```bash
 git clone https://github.com/[YOUR-USERNAME]/learn-japanese.git
 cd learn-japanese
 ```
 
 2. `index.html` 파일을 브라우저에서 엽니다:
+
 ```bash
 open index.html
 # 또는
@@ -86,6 +88,7 @@ learn-japanese/
 ### 배포 워크플로우
 
 `master` 또는 `main` 브랜치에 푸시하면:
+
 1. GitHub Actions가 자동으로 실행됩니다
 2. 파일들이 GitHub Pages에 배포됩니다
 3. 몇 분 후 웹사이트가 업데이트됩니다
@@ -102,14 +105,14 @@ background: linear-gradient(160deg, #0f0c29, #302b63, #24243e);
 
 /* 히라가나 색상 */
 .type-badge.hiragana {
-    background: rgba(236, 72, 153, 0.12);
-    color: #f9a8d4;
+  background: rgba(236, 72, 153, 0.12);
+  color: #f9a8d4;
 }
 
 /* 카타카나 색상 */
 .type-badge.katakana {
-    background: rgba(59, 130, 246, 0.12);
-    color: #93c5fd;
+  background: rgba(59, 130, 246, 0.12);
+  color: #93c5fd;
 }
 ```
 
