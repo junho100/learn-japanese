@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일본어 히라가나/카타카나 퀴즈</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Celebration screen -->
+        <div id="celebrate-screen" class="hidden">
+            <div class="celebrate-content">
+                <div class="celebrate-emoji">🎉</div>
+                <div class="celebrate-title">완벽해요!</div>
+                <div class="celebrate-round">Round <span id="celebrate-round-num"></span> 클리어</div>
+                <div class="celebrate-next">Round <span id="celebrate-next-num"></span> 준비 중...</div>
+            </div>
+        </div>
+
+        <!-- Quiz screen -->
+        <div id="quiz-screen">
+            <!-- Round badge -->
+            <div class="round-badge">
+                ROUND <span id="round-num">1</span>
+            </div>
+
+            <!-- Stats row -->
+            <div class="stats-row">
+                <span>
+                    진도
+                    <b class="stat-progress">
+                        <span id="cleared-count">0</span><span class="stat-total">/98</span>
+                    </b>
+                </span>
+                <span>
+                    정확도
+                    <b id="accuracy" class="stat-accuracy">100%</b>
+                </span>
+                <span>
+                    총
+                    <b class="stat-total-questions"><span id="total-questions">0</span></b>
+                    문제
+                </span>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <!-- Quiz content -->
+            <div id="quiz-content">
+                <!-- Type badge -->
+                <div id="type-badge" class="type-badge">ひらがな</div>
+
+                <!-- Main character -->
+                <div id="main-character" class="main-character">あ</div>
+
+                <!-- Feedback line -->
+                <div id="feedback-line" class="feedback-line">
+                    <span id="feedback-text"></span>
+                </div>
+
+                <!-- Input -->
+                <input
+                    type="text"
+                    id="answer-input"
+                    placeholder="발음 입력 후 Enter ↵"
+                    autocomplete="off"
+                    autocorrect="off"
+                    spellcheck="false"
+                />
+
+                <!-- Bottom hint -->
+                <div class="bottom-hint">
+                    큐 <span id="queue-count">98</span>개 남음 · 완료 <span id="completed-count">0</span>자
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
