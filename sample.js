@@ -1,53 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-const H = [
-  { c: "あ", r: ["아"] },
-  { c: "い", r: ["이"] },
-  { c: "う", r: ["우"] },
-  { c: "え", r: ["에"] },
-  { c: "お", r: ["오"] },
-  { c: "か", r: ["카"] },
-  { c: "き", r: ["키"] },
-  { c: "く", r: ["쿠"] },
-  { c: "け", r: ["케"] },
-  { c: "こ", r: ["코"] },
-  { c: "さ", r: ["사"] },
-  { c: "し", r: ["시", "쉬"] },
-  { c: "す", r: ["스"] },
-  { c: "せ", r: ["세"] },
-  { c: "そ", r: ["소"] },
-  { c: "た", r: ["타"] },
-  { c: "ち", r: ["치"] },
-  { c: "つ", r: ["츠", "쯔"] },
-  { c: "て", r: ["테"] },
-  { c: "と", r: ["토"] },
-  { c: "な", r: ["나"] },
-  { c: "に", r: ["니"] },
-  { c: "ぬ", r: ["누"] },
-  { c: "ね", r: ["네"] },
-  { c: "の", r: ["노"] },
-  { c: "は", r: ["하"] },
-  { c: "ひ", r: ["히"] },
-  { c: "ふ", r: ["후", "푸"] },
-  { c: "へ", r: ["헤"] },
-  { c: "ほ", r: ["호"] },
-  { c: "ま", r: ["마"] },
-  { c: "み", r: ["미"] },
-  { c: "む", r: ["무"] },
-  { c: "め", r: ["메"] },
-  { c: "も", r: ["모"] },
-  { c: "や", r: ["야"] },
-  { c: "ゆ", r: ["유"] },
-  { c: "よ", r: ["요"] },
-  { c: "ら", r: ["라"] },
-  { c: "り", r: ["리"] },
-  { c: "る", r: ["루"] },
-  { c: "れ", r: ["레"] },
-  { c: "ろ", r: ["로"] },
-  { c: "わ", r: ["와"] },
-  { c: "を", r: ["오", "워"] },
-  { c: "ん", r: ["응", "은"] },
-];
 const K = [
   { c: "ア", r: ["아"] },
   { c: "イ", r: ["이"] },
@@ -96,8 +48,7 @@ const K = [
   { c: "ヲ", r: ["오", "워"] },
   { c: "ン", r: ["응", "은"] },
 ];
-const ALL = [...H, ...K];
-const HSET = new Set(H.map((x) => x.c));
+const ALL = K;
 
 function shuffle(a) {
   const b = [...a];
@@ -138,7 +89,6 @@ export default function App() {
   }, []);
 
   const cur = queue[0];
-  const isH = cur ? HSET.has(cur.c) : false;
   const acc = stats.n > 0 ? Math.round((stats.ok / stats.n) * 100) : 100;
   const pct = Math.min(100, Math.round((cleared.size / ALL.length) * 100));
 
@@ -185,9 +135,9 @@ export default function App() {
     }
   };
 
-  const accentColor = isH ? "#f9a8d4" : "#93c5fd";
-  const accentBg = isH ? "rgba(236,72,153,0.12)" : "rgba(59,130,246,0.12)";
-  const accentBorder = isH ? "rgba(236,72,153,0.25)" : "rgba(59,130,246,0.25)";
+  const accentColor = "#93c5fd";
+  const accentBg = "rgba(59,130,246,0.12)";
+  const accentBorder = "rgba(59,130,246,0.25)";
 
   if (celebrate)
     return (
@@ -346,7 +296,7 @@ export default function App() {
               border: `1px solid ${accentBorder}`,
             }}
           >
-            {isH ? "ひらがな" : "カタカナ"}
+            カタカナ
           </div>
 
           {/* Main character */}
